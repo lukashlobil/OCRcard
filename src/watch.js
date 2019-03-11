@@ -72,10 +72,11 @@ fs.watch(file, (event, filename) => {
                 `All information is necessary for our law and all information will be used in compliance with our law.` +
                 `<br>Ubytovaný host prohlašuje, že byl seznámen s ubytovacím řádem v dostatečném předstihu před poskytnutím služby. Orgánem vykonávajícím dohled nad ochranou spotřebitele a subjektem mimosoudního řešení spotřebitelských sporů je` +
                 `<br> Česká obchodní inspekce, Štěpánská 15, Praha 2, 12000, email: adr@coi.cz, www.coi.cz <br><b>Děkujeme / Thank you</b>`;
-
-            fs.writeFile('OCRlog.html', htmlContent, function () {
-                console.log('written');
-            })
+            if (ic_type !== 'Credit_Card') {
+                fs.writeFile('OCRlog.html', htmlContent, function () {
+                    console.log('written');
+                })
+            }
         }
     }
 })
